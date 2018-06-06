@@ -35,11 +35,14 @@ function shuffle(array) {
 function timer() {
   const pageTimer = document.querySelector('.timer');
 
-  if (seconds < 59) {
+  if (seconds < 9) {
+    seconds += 1;
+    pageTimer.innerText = `${minutes} : 0${seconds}`;
+  }
+  else if (seconds < 59) {
     seconds += 1;
     pageTimer.innerText = `${minutes} : ${seconds}`;
-  }
-  else {
+  }  else {
     minutes += 1;
     seconds = 0;
     pageTimer.innerText = `${minutes} : ${seconds}`;
@@ -167,6 +170,7 @@ function win() {
 function clear() {
   // Clears board
   deck.innerHTML = '';
+  openCards = [];
 
   // Restores default star rating
   stars.innerHTML = `<li><i class="fas fa-star"></i></li>\
@@ -181,7 +185,6 @@ function clear() {
   // Restarts timer
   seconds = -1;
   minutes = 0;
-
   counter = setInterval(timer, 1000);
 }
 
