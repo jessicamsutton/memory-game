@@ -9,7 +9,7 @@ const icons = ['fas fa-globe', 'fas fa-globe',
             'fas fa-map', 'fas fa-map',
             ];
 
-let seconds = 0;
+let seconds = -1;
 let minutes = 0;
 let moves = 0;
 let openCards = [];
@@ -68,7 +68,7 @@ function countMoves() {
 // Creates a star rating based on the number of moves the user took to complete a round
 function starRating(moves) {
   if (moves == 14) {
-    stars.removeChild(stars.childNodes[1]);
+    stars.removeChild(stars.childNodes[0]);
   }
   else if (moves == 24) {
     stars.removeChild(stars.childNodes[2]);
@@ -176,6 +176,11 @@ function clear() {
   // Restarts timer
   seconds = 0;
   minutes = 0;
+
+  // Restores default game rating
+  stars.innerHTML = `<li><i class="fas fa-star"></i></li>\
+  <li><i class="fas fa-star"></i></li>\
+  <li><i class="fas fa-star"></i></li>`;
 }
 
 // Event listener for restart button/icon
