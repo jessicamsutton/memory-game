@@ -180,6 +180,7 @@ li {
     border: 1px solid #857ee7;
     border-radius: 30px;
     float: none;
+    margin: 0 10px 0 0;
 }
 
 .exit {
@@ -189,6 +190,7 @@ li {
     border: 1px solid #857ee7;
     border-radius: 30px;
     float: none;
+    margin: 0 0 0 10px;
 }
 
 /* Responsive Styles */

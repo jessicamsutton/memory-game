@@ -9,11 +9,12 @@ const icons = ['fas fa-globe', 'fas fa-globe',
             'fas fa-map', 'fas fa-map',
             ];
 
-let seconds = -1;
-let minutes = 0;
+let seconds;
+let minutes;
 let moves = 0;
 let openCards = [];
 let totalMatches = 0;
+let counter;
 
 // Shuffle function from http://stackoverflow.com/a/2450976
 function shuffle(array) {
@@ -44,7 +45,6 @@ function timer() {
     pageTimer.innerText = `${minutes} : ${seconds}`;
   }
 }
-let counter = setInterval(timer, 1000);
 
 // Display the cards on the page by looping through each card and creating its HTML
 const deck = document.querySelector('.deck');
@@ -168,19 +168,21 @@ function clear() {
   // Clears board
   deck.innerHTML = '';
 
+  // Restores default star rating
+  stars.innerHTML = `<li><i class="fas fa-star"></i></li>\
+  <li><i class="fas fa-star"></i></li>\
+  <li><i class="fas fa-star"></i></li>`;
+
   // Restarts moves counter
   moves = 0;
   movesCounter.innerHTML = moves;
   totalMatches = 0;
 
   // Restarts timer
-  seconds = 0;
+  seconds = -1;
   minutes = 0;
 
-  // Restores default game rating
-  stars.innerHTML = `<li><i class="fas fa-star"></i></li>\
-  <li><i class="fas fa-star"></i></li>\
-  <li><i class="fas fa-star"></i></li>`;
+  counter = setInterval(timer, 1000);
 }
 
 // Event listener for restart button/icon
