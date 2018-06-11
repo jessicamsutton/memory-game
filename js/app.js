@@ -13,8 +13,6 @@ let seconds;
 let minutes;
 let moves = 0;
 let openCards = [];
-let totalMatches = 0;
-let counter;
 
 // Shuffle function from http://stackoverflow.com/a/2450976
 function shuffle(array) {
@@ -48,6 +46,7 @@ function timer() {
     pageTimer.innerText = `${minutes} : ${seconds}`;
   }
 }
+let counter = setInterval(timer, 1000);
 
 // Display the cards on the page by looping through each card and creating its HTML
 const deck = document.querySelector('.deck');
@@ -109,6 +108,7 @@ class 'match' is added for the round,
 # of moves is incremented
 and star rating is updated.
 */
+let totalMatches = 0;
 function matching() {
   openCards.forEach(function(card) {
     card.classList.add('yay');
@@ -159,7 +159,6 @@ The modal provides the user's time, # of moves, and star rating
 */
 const modal = document.querySelector('.modal');
 function win() {
-  clearInterval(counter);
   document.querySelector('.modal-text').innerHTML = `<p>Great Job!</p>\
     <p>Time: ${minutes}:${seconds}</p><p>Moves: ${moves}</p>\
     <p>${stars.innerHTML}</p>`;
@@ -185,7 +184,6 @@ function clear() {
   // Restarts timer
   seconds = -1;
   minutes = 0;
-  counter = setInterval(timer, 1000);
 }
 
 // Event listener for restart button/icon
@@ -216,9 +214,9 @@ adding an event listener to each card
 */
 function init() {
   clear();
+  timer();
   shuffle(icons);
   displayCards(icons);
-  timer();
 
   // Event listener for cards
   const cards = document.querySelectorAll('.card');
