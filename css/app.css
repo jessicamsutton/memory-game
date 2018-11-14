@@ -29,7 +29,6 @@ h1 {
 header {
     width: 100%;
     opacity: 0.9;
-    padding: 10px 0 0 0;
 }
 
 ul,
@@ -42,12 +41,17 @@ li {
 .container {
     background: #fef1e6;
     max-width: 660px;
-    height: 100%;
+    height: auto;
     margin: 0 auto;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+}
+
+.header-container {
+    margin: 0;
+    padding: 0;
 }
 
 /* Deck of Cards */
@@ -123,11 +127,10 @@ li {
     justify-content: center;
     align-items: center;
     opacity: 0.9;
-    padding: 0 0 10px 0;
 }
 
 .score-panel .stars {
-    margin: 10px 15px 10px 10px;
+    margin: 0 15px 0 10px;
     padding: 0;
     display: inline-block;
 }
@@ -138,15 +141,15 @@ li {
 }
 
 .score-panel .timer {
-    margin: 10px 15px 10px 15px;
+    margin: 0 15px;
 }
 
 .score-panel .moves {
-    margin: 10px 15px 10px 15px;
+    margin: 0 15px;
 }
 
 .score-panel .restart {
-    margin: 10px 10px 10px 15px;
+    margin: 0 10px 0 15px;
     float: right;
     cursor: pointer;
 }
@@ -217,7 +220,7 @@ li {
   .deck {
       width: 100%;
       height: auto;
-      padding: 25px;
+      padding: 0 25px;
   }
   .deck .card {
       height: 85px;
@@ -233,7 +236,7 @@ li {
   .deck {
       width: 100%;
       height: auto;
-      padding: 32px;
+      padding: 0 32px;
   }
   .deck .card {
       width: 100px;
@@ -249,7 +252,7 @@ li {
   .deck {
       width: 100%;
       height: auto;
-      padding: 32px;
+      padding: 0 32px;
   }
   .deck .card {
       width: 125px;
@@ -265,12 +268,12 @@ li {
   }
   .deck {
       width: 660px;
-      min-height: 680px;
-      padding: 32px;
+      min-height: 630px;
+      padding: 0 32px;
   }
   .deck .card {
       height: 125px;
       width: 125px;
-      margin: 10px;
+      margin: 0 10px;
   }
 }
